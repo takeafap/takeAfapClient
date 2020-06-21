@@ -11,10 +11,11 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AppComponent } from './app.component';
 import { AlertComponent } from './_components';
 import { HomeComponent } from './home';;
-import { ProfileComponent } from './profile/profile.component'
+import { ProfileComponent } from './view/profile/profile.component'
 ;
 import { PlayerComponent } from './player/player.component'
-@NgModule({
+;
+import { StatsComponent } from './stats/stats.component'@NgModule({
     imports: [
         BrowserModule,
         ReactiveFormsModule,
@@ -27,7 +28,8 @@ import { PlayerComponent } from './player/player.component'
         HomeComponent
 ,
         ProfileComponent ,
-        PlayerComponent   ],
+        PlayerComponent ,
+        StatsComponent  ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
