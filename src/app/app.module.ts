@@ -4,16 +4,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // used to create fake backend
-import { fakeBackendProvider } from './_helpers';
+import { fakeBackendProvider } from './common/_helpers/fake-backend';
 
 import { AppRoutingModule } from './app-routing.module';
-import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+import { JwtInterceptor, ErrorInterceptor } from './common/_helpers/';
 import { AppComponent } from './app.component';
-import { AlertComponent } from './_components';
-import { HomeComponent } from './home';;
-import { ProfileComponent } from './profile/profile.component'
-;
-import { PlayerComponent } from './player/player.component'
+import { AlertComponent } from './common/_components/alert.component';
+import { HomeComponent } from './pages/home';;
+import { ProfileComponent } from './pages/profile/profile.component';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -27,7 +26,7 @@ import { PlayerComponent } from './player/player.component'
         HomeComponent
 ,
         ProfileComponent ,
-        PlayerComponent   ],
+                 ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

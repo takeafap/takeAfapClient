@@ -3,16 +3,17 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AccountService, AlertService } from '@app/_services';
+import { AccountService, AlertService } from '../../common/_services';
 
 @Component({
-  templateUrl: 'register.component.html',
-  styleUrls: ['./register.component.scss'],
+  templateUrl: 'login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
-export class RegisterComponent implements OnInit {
+export class LoginComponent implements OnInit {
   form: FormGroup;
   loading = false;
   submitted = false;
+  returnUrl: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -24,11 +25,12 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
       username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', Validators.required],
     });
+
+    // get return url from route parameters or default to '/'
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   // convenience getter for easy access to form fields
@@ -49,14 +51,11 @@ export class RegisterComponent implements OnInit {
 
     this.loading = true;
     this.accountService
-      .register(this.form.value)
+      .login(this.f.username.value, this.f.password.value)
       .pipe(first())
       .subscribe(
         (data) => {
-          this.alertService.success('Registration successful', {
-            keepAfterRouteChange: true,
-          });
-          this.router.navigate(['../login'], { relativeTo: this.route });
+          this.router.navigate([this.returnUrl]);
         },
         (error) => {
           this.alertService.error(error);
