@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap");
 @import "../var";
 
-
 .nav {
   width: 100%;
   height: 150px;
 
-  background-color: $nav-color;
+  background-color: $primary;
 
   display: flex;
   justify-content: space-around;

@@ -1,41 +1,152 @@
 @import "../../../var";
 
-.card {
-  text-align: center;
-  width: 50%;
-  margin: 0 auto;
-  transform: translateY(50%);
-  color: #1c2541;
-  font-size: 20pt;
-  border-radius: 50px;
-  background: $login-form-color;
-  box-shadow: 40px 40px 80px #546d6e, -40px -40px 80px #fcffff;
-  input {
-    border-radius: 50px;
-    border: none;
-    text-align: center;
-    font-size: 20pt;
-
-    background: #cae3e4;
-    box-shadow: inset 18px 18px 36px #889899, inset -18px -18px 36px #a3b4b4;
+.login {
+  background-color: $login-form-color;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  .head {
+    height: 100px;
+    background-color: $primary;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .card-header {
-    background-color: unset;
-    text-align: center;
-    font-size: 2rem;
+  form {
+    margin-top: 40px;
   }
-  .btn-primary {
-    background-color: $login-btn-color;
-    border: none;
-    font-size: 16pt;
+  .button-out {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
   }
-  .btn-link {
-    color: #1c2541;
-    font-size: 16pt;
+  .btn {
+    border-radius: 0px;
+    margin-bottom: 20px;
   }
 }
-@media only screen and (max-width: 900px) {
-  .card {
-    width: 90%;
+//LABELS
+.group {
+  position: relative;
+  margin-bottom: 45px;
+}
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #757575;
+  background-color: $login-form-color;
+}
+input:focus {
+  outline: none;
+}
+
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+// active state
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264ae;
+}
+
+// BOTTOM BARS
+.bar {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264ae;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
+// active state
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+
+// HIGHLIGHTER
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+// active state
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+// ANIMATIONS
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .login {
+    width: 100%;
   }
 }

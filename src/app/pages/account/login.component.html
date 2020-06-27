@@ -1,4 +1,53 @@
-﻿<div class="card">
+﻿<div class="login">
+  <div class="head">
+    <h1>FunHub</h1>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="group">
+      <input
+        type="text"
+        autocomplete="new-password"
+        formControlName="username"
+        [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+        required
+      />
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Username</label>
+      <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+        <div *ngIf="f.username.errors.required">Username is required</div>
+      </div>
+    </div>
+
+    <div class="group">
+      <input
+        type="password"
+        autocomplete="new-password"
+        formControlName="password"
+        [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+        required
+      />
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Password</label>
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is required</div>
+      </div>
+    </div>
+    <div class="button-out">
+      <button [disabled]="loading" class="btn btn-primary">
+        <span
+          *ngIf="loading"
+          class="spinner-border spinner-border-sm mr-1"
+        ></span>
+        Login
+      </button>
+      <a routerLink="../register" class="btn btn-link">Register</a>
+    </div>
+  </form>
+</div>
+
+<!-- <div class="card">
   <h4 class="card-header">FunHub</h4>
   <div class="card-body">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
@@ -38,4 +87,4 @@
       </div>
     </form>
   </div>
-</div>
+</div> -->
