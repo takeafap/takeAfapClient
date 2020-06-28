@@ -14,6 +14,8 @@ import { HomeComponent } from './pages/home';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -26,7 +28,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
     // provider used to create fake backend
     fakeBackendProvider,
   ],

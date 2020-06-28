@@ -1,22 +1,19 @@
 ﻿<!-- nav -->
 <div *ngIf="user">
   <div class="nav">
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a
+    >
     <div class="logo">
       <a href="#" routerLink="/">
         <span class="fun">Fun</span>
         <span class="hub">Hub</span></a
       >
     </div>
-    <div class="links">
-      <a
-        routerLink="/"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Home</a
-      >
-      <a routerLink="/profile">Profile</a>
-      <a (click)="logout()">Logout</a>
-    </div>
+    <a (click)="logout()">Logout</a>
   </div>
 </div>
 

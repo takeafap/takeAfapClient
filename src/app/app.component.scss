@@ -26,14 +26,10 @@
       color: rgb(97, 97, 182);
     }
   }
-  .links {
-    display: flex;
-    justify-content: space-evenly;
-    width: 500px;
-    a {
-      color: white;
-      text-decoration: none;
-      font-size: 20pt;
-    }
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 20pt;
   }
 }
