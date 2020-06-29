@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:4000',
+  apiUrl: 'https://funhubnodeapi.herokuapp.com',
   firebase: {
     apiKey: 'AIzaSyB_9V_yUN2dOFKKVvr15f9nnVH9OKWNr18',
     authDomain: 'fun-hub-fef69.firebaseapp.com',
