@@ -13,9 +13,10 @@ import { AlertComponent } from './common/_components/alert.component';
 import { HomeComponent } from './pages/home';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AngularFireModule  } from '@angular/fire';
-import {AngularFireAnalyticsModule} from '@angular/fire/analytics'
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { environment } from '../environments/environment';
+import { VideoComponent } from './pages/home/video/video.component';
 
 @NgModule({
   imports: [
@@ -25,9 +26,15 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     NgbModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAnalyticsModule
+    AngularFireAnalyticsModule,
   ],
-  declarations: [AppComponent, AlertComponent, HomeComponent, ProfileComponent],
+  declarations: [
+    AppComponent,
+    AlertComponent,
+    HomeComponent,
+    ProfileComponent,
+    VideoComponent,
+  ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

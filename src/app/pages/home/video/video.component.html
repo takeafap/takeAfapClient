@@ -1,0 +1,23 @@
+<div class="hero">
+  <h1>Top Videos</h1>
+  <div *ngFor="let video of videos" class="video">
+    <video controls src="{{ video.source }}"></video>
+    <div class="under-video">
+      <h1>{{ video.title }}</h1>
+      <div class="buttons">
+        <div (click)="like()" class="button">
+          <p>{{ video.likes }}</p>
+          <img class="icon" src="./assets/icons/like.svg" alt="Likes" />
+        </div>
+        <div (click)="dislike()" class="button">
+          <p>{{ video.dislikes }}</p>
+          <img class="icon" src="./assets/icons/dislike.svg" alt="Dislikes" />
+        </div>
+      </div>
+    </div>
+    <div class="comments">
+      <h2>Kommentare</h2>
+      <p>{{ video.topComment }}</p>
+    </div>
+  </div>
+</div>
