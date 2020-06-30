@@ -18,6 +18,7 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { environment } from '../environments/environment';
 import { VideoComponent } from './pages/home/video/video.component';
 import { NavComponent } from './sub-components/nav/nav.component';
+import { ScrollUpComponent } from './sub-components/scroll-up/scroll-up.component';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { NavComponent } from './sub-components/nav/nav.component';
     ProfileComponent,
     VideoComponent,
     NavComponent,
+    ScrollUpComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
