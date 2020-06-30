@@ -17,6 +17,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { environment } from '../environments/environment';
 import { VideoComponent } from './pages/home/video/video.component';
+import { NavComponent } from './sub-components/nav/nav.component';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { VideoComponent } from './pages/home/video/video.component';
     HomeComponent,
     ProfileComponent,
     VideoComponent,
+    NavComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

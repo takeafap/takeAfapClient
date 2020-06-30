@@ -1,22 +1,4 @@
-﻿<!-- nav -->
-<div *ngIf="user">
-  <div class="nav">
-    <a
-      routerLink="/"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      >Home</a
-    >
-    <div class="logo">
-      <a href="#" routerLink="/">
-        <span class="fun">Fun</span>
-        <span class="hub">Hub</span></a
-      >
-    </div>
-    <a (click)="logout()">Logout</a>
-  </div>
-</div>
-
+﻿<app-nav></app-nav>
 <!-- main app container -->
 <div class="app-container" [ngClass]="{ 'bg-light': user }">
   <alert></alert>

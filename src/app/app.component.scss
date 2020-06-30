@@ -1,40 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap");
 @import "../var";
 
-.nav {
-  width: 100%;
-  height: 100px;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  background-color: $primary;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  .logo {
-    display: flex;
-    color: white;
-    a {
-      font-family: "Holtwood One SC", serif;
-      font-size: 30pt;
-      text-decoration: none;
-    }
-    .fun {
-      color: rgb(156, 66, 86);
-    }
-    .hub {
-      color: rgb(97, 97, 182);
-    }
-  }
-
-  a {
-    color: white;
-    text-decoration: none;
-    font-size: 20pt;
-  }
-}
 #scrollup {
   position: fixed;
   bottom: 20px;
