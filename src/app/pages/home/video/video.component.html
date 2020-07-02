@@ -1,23 +1,45 @@
-<div class="hero">
+<!-- <div class="hero">
   <h1>Top Videos</h1>
-  <div *ngFor="let video of videos" class="video">
-    <video controls src="{{ video.source }}"></video>
+  <div *ngFor="let videoPlaylist of videoPlaylist" class="video">
+
+    <video controls src="{{ videoPlaylist.src }}"></video>
     <div class="under-video">
-      <h1>{{ video.title }}</h1>
+      <h1>{{ videoPlaylist.title }}</h1>
       <div class="buttons">
         <div (click)="like()" class="button">
-          <p>{{ video.likes }}</p>
+          <p>{{ videoPlaylist.Liked }}</p>
           <img class="icon" src="./assets/icons/like.svg" alt="Likes" />
         </div>
         <div (click)="dislike()" class="button">
-          <p>{{ video.dislikes }}</p>
+          <p>{{ videoPlaylist.disliked }}</p>
           <img class="icon" src="./assets/icons/dislike.svg" alt="Dislikes" />
         </div>
       </div>
     </div>
     <div class="comments">
       <h2>Kommentare</h2>
-      <p>{{ video.topComment }}</p>
+      <p>WAHAHS</p>
+      <button (click)="goToSingleVideo()"></button>
+    </div>
+  </div>
+</div> -->
+<div class="hero">
+  <div *ngFor="let video of videoPlaylist">
+    <div class="viewcontainer">
+      <img src="{{ video.thumbnail }}" (click)="gotoSingleVideo(video)" />
+      <div class="undervideo">
+        <h1>{{ video.title }}</h1>
+        <div class="buttons">
+          <div class="button">
+            <p>{{ video.Liked }}</p>
+            <img class="icon" src="./assets/icons/like.svg" alt="Likes" />
+          </div>
+          <div class="button">
+            <p>{{ video.disliked }}</p>
+            <img class="icon" src="./assets/icons/dislike.svg" alt="Dislikes" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

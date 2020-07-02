@@ -7,7 +7,6 @@ import { AccountService, AlertService } from '../../common/_services';
 
 @Component({
   templateUrl: 'register.component.html',
-  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup;

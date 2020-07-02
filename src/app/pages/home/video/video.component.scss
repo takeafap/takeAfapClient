@@ -1,54 +1,66 @@
 .hero {
-  width: 60%;
   margin: 0 auto;
-  margin-top: 30px;
-  h1 {
-    text-align: center;
-  }
-  .video {
-    margin-top: 50px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.37);
-    padding-bottom: 50px;
-    video {
+  width: 70%;
+  .viewcontainer {
+    cursor: pointer;
+    margin-top: 30px;
+    img {
       width: 100%;
-      border-radius: 15px;
-      outline: none;
-      border: none;
     }
-    .icon {
-      width: 40px;
-    }
-    .under-video {
+    .undervideo {
       display: flex;
       justify-content: space-between;
+      width: 100%;
       h1 {
-        font-size: 20pt;
+        font-size: 18pt;
+        margin-top: 20px;
       }
       .buttons {
+        margin-right: 30px;
         display: flex;
-        justify-content: space-evenly;
-        width: 160px;
+        justify-content: space-between;
+        align-items: center;
+        width: 200px;
         .button {
-          width: 70px;
           display: flex;
           align-items: center;
-          justify-content: space-evenly;
-          cursor: pointer;
+          margin-left: 20px;
+          p {
+            margin-top: 20px;
+          }
+          img {
+            width: 50px;
+            margin-left: 10px;
+          }
         }
-      }
-    }
-    .comments {
-      background-color: rgba(128, 128, 128, 0.178);
-      padding: 10px;
-      border-radius: 15px;
-      margin-top: 20px;
-      h2 {
-        font-size: 14pt;
       }
     }
   }
 }
-p,
-h1 {
-  margin-top: 20px;
+@media only screen and (max-width: 850px) {
+  .hero {
+    width: 96%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .hero {
+    .viewcontainer {
+      .undervideo {
+        flex-direction: column;
+        h1 {
+          font-size: 15pt;
+        }
+        .buttons {
+          width: 100px;
+          height: 10px;
+          .button {
+            img {
+              width: 15px;
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

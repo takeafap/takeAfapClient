@@ -19,6 +19,8 @@ import { environment } from '../environments/environment';
 import { VideoComponent } from './pages/home/video/video.component';
 import { NavComponent } from './sub-components/nav/nav.component';
 import { ScrollUpComponent } from './sub-components/scroll-up/scroll-up.component';
+import { VideoviewComponent } from './pages/home/videoview/videoview.component';
+
 
 @NgModule({
   imports: [
@@ -38,6 +40,7 @@ import { ScrollUpComponent } from './sub-components/scroll-up/scroll-up.componen
     VideoComponent,
     NavComponent,
     ScrollUpComponent,
+    VideoviewComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
