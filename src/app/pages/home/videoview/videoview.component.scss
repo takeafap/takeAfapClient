@@ -1,6 +1,7 @@
+@import "../../../../var";
 .hero {
   margin: 0 auto;
-  width: 70%;
+  width: $width;
   .viewcontainer {
     video {
       width: 100%;
@@ -29,6 +30,33 @@
           img {
             width: 50px;
             margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 850px) {
+  .hero {
+    width: 96%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .hero {
+    .viewcontainer {
+      .undervideo {
+        flex-direction: column;
+        h1 {
+          font-size: 15pt;
+        }
+        .buttons {
+          width: 100px;
+          height: 10px;
+          .button {
+            img {
+              width: 15px;
+              margin-left: 5px;
+            }
           }
         }
       }

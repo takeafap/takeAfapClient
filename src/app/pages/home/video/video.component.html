@@ -26,7 +26,11 @@
 <div class="hero">
   <div *ngFor="let video of videoPlaylist">
     <div class="viewcontainer">
-      <img src="{{ video.thumbnail }}" (click)="gotoSingleVideo(video)" />
+      <img
+        class="thumbnail"
+        src="{{ video.thumbnail }}"
+        (click)="gotoSingleVideo(video)"
+      />
       <div class="undervideo">
         <h1>{{ video.title }}</h1>
         <div class="buttons">
