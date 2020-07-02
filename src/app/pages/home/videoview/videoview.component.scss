@@ -1,7 +1,37 @@
-.viewcontainer{
-    padding-top: 30vh;
-    text-align: center;
-}
-video{
-    height: 25vh;
+.hero {
+  margin: 0 auto;
+  width: 70%;
+  .viewcontainer {
+    video {
+      width: 100%;
+    }
+    .undervideo {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      h1 {
+        font-size: 18pt;
+        margin-top: 20px;
+      }
+      .buttons {
+        margin-right: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 200px;
+        .button {
+          display: flex;
+          align-items: center;
+          margin-left: 20px;
+          p {
+            margin-top: 20px;
+          }
+          img {
+            width: 50px;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
 }

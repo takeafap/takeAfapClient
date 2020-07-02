@@ -21,6 +21,7 @@ import { NavComponent } from './sub-components/nav/nav.component';
 import { ScrollUpComponent } from './sub-components/scroll-up/scroll-up.component';
 import { VideoviewComponent } from './pages/home/videoview/videoview.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { LoaderComponent } from './sub-components/loader/loader.component';
 
 @NgModule({
   imports: [
@@ -44,6 +45,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     NavComponent,
     ScrollUpComponent,
     VideoviewComponent,
+    LoaderComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

@@ -1,9 +1,22 @@
-<br>
-<br>
-
-<div>
-    <div class="viewcontainer">
-        <h1>{{videoObj.title}}</h1>
-       <video controls src="{{videoObj.src}}"></video>
+<div class="hero">
+  <div class="viewcontainer">
+    <video controls src="{{ videoObj.src }}"></video>
+    <div class="undervideo">
+      <h1>{{ videoObj.title }}</h1>
+      <div class="buttons">
+        <div class="button">
+          <p>{{ videoObj.Liked }}</p>
+          <div (click)="like()">
+            <img class="icon" src="./assets/icons/like.svg" alt="Likes" />
+          </div>
+        </div>
+        <div class="button">
+          <p>{{ videoObj.disliked }}</p>
+          <div (click)="dislike()">
+            <img class="icon" src="./assets/icons/dislike.svg" alt="Dislikes" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</div>
