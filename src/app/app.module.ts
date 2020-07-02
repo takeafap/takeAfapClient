@@ -20,7 +20,7 @@ import { VideoComponent } from './pages/home/video/video.component';
 import { NavComponent } from './sub-components/nav/nav.component';
 import { ScrollUpComponent } from './sub-components/scroll-up/scroll-up.component';
 import { VideoviewComponent } from './pages/home/videoview/videoview.component';
-
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   imports: [
@@ -31,6 +31,9 @@ import { VideoviewComponent } from './pages/home/videoview/videoview.component';
     NgbModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
   ],
   declarations: [
     AppComponent,
