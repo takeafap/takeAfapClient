@@ -21,7 +21,8 @@ import { NavComponent } from './sub-components/nav/nav.component';
 import { ScrollUpComponent } from './sub-components/scroll-up/scroll-up.component';
 import { VideoviewComponent } from './pages/home/videoview/videoview.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { LoaderComponent } from './sub-components/loader/loader.component';
+import { LoaderComponent } from './sub-components/loader/loader.component';;
+import { CategoryComponent } from './pages/home/category/category.component'
 
 @NgModule({
   imports: [
@@ -46,6 +47,7 @@ import { LoaderComponent } from './sub-components/loader/loader.component';
     ScrollUpComponent,
     VideoviewComponent,
     LoaderComponent,
+    CategoryComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

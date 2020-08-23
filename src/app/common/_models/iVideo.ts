@@ -3,4 +3,5 @@ export interface IVideo{
     title: string
     Liked: number
     disliked: number
+    tag : string
 }
