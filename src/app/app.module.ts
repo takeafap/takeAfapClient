@@ -1,6 +1,6 @@
 ﻿import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // used to create fake backend
@@ -32,6 +32,8 @@ import { FooterComponent } from './sub-components/footer/footer.component';
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule,                               // <========== Add this line!
+    ReactiveFormsModule,     
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {

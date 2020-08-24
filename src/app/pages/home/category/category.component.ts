@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { IVideo } from '../../../common/_models/iVideo';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { VideotestService } from '../../../common/_services/videotest.service';
+import { EmployeeService } from '@app/common/_services/employee.service';
+import { NgForm } from '@angular/forms';
+
+declare var M: any;
+
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
@@ -10,24 +12,59 @@ import { VideotestService } from '../../../common/_services/videotest.service';
 })
 export class CategoryComponent implements OnInit {
 
-  private model: IVideo;
+  constructor(public employeeService: EmployeeService) { }
 
-  constructor(private _data: VideotestService) {
-    this._data.rezeptModel.subscribe(result => {
-      if(result != null) {
-        this.model = result;
-      }
-    })
-   }
-
-   ngOnInit(): void {
-    this._data.loadData();
+  ngOnInit() {
+    this.resetForm();
+    this.refreshEmployeeList();
   }
 
-  public test(){
-    if(this.model.tag == "oma")
-    {
-      console.log("AAAAAHSDU)IDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD")
+  resetForm(form?: NgForm) {
+    if (form)
+      form.reset();
+    this.employeeService.selectedEmployee = {
+      _id: "",
+      title: "",
+      src: "",
+      thumbnail: "",
+      tag: "",
+    }
+  }
+
+  onSubmit(form: NgForm) {
+    if (form.value._id == "") {
+      this.employeeService.postEmployee(form.value).subscribe((res) => {
+        this.resetForm(form);
+        this.refreshEmployeeList();
+        M.toast({ html: 'Saved successfully', classes: 'rounded' });
+      });
+    }
+    else {
+      this.employeeService.putEmployee(form.value).subscribe((res) => {
+        this.resetForm(form);
+        this.refreshEmployeeList();
+        M.toast({ html: 'Updated successfully', classes: 'rounded' });
+      });
+    }
+  }
+
+  refreshEmployeeList() {
+    this.employeeService.getEmployeeList().subscribe((res) => {
+      this.employeeService.employees = res as IVideo[];
+    });
+  }
+
+  onEdit(emp: IVideo) {
+    this.employeeService.selectedEmployee = emp;
+  }
+
+  onDelete(_id: string, form: NgForm) {
+    if (confirm('Are you sure to delete this record ?') == true) {
+      this.employeeService.deleteEmployee(_id).subscribe((res) => {
+        this.refreshEmployeeList();
+        this.resetForm(form);
+        M.toast({ html: 'Deleted successfully', classes: 'rounded' });
+      });
     }
   }
 

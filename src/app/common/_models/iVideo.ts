@@ -1,7 +1,7 @@
 export interface IVideo{
+    _id:string
     src: string
     title: string
-    Liked: number
-    disliked: number
+    thumbnail: string
     tag : string
 }

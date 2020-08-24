@@ -24,7 +24,6 @@ export class VideotestService {
      private getData():Observable<IVideo> {
        return this.http.get<IVideo>(this.serviceUrl)
      }
-
      public loadData() {
       var result: IVideo;
       this.getData().subscribe(res =>
