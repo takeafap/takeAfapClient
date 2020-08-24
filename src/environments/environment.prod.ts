@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   apiUrl: 'https://funhubnodeapi.herokuapp.com',
-  api2Url: 'https://nodejsvideocrud.herokuapp.com/tasks',
+  api2Url: 'https://takeafap-video-api.herokuapp.com/employees',
   firebase: {
     apiKey: 'AIzaSyB_9V_yUN2dOFKKVvr15f9nnVH9OKWNr18',
     authDomain: 'fun-hub-fef69.firebaseapp.com',
