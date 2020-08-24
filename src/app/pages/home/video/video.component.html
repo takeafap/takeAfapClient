@@ -1,20 +1,17 @@
 <div class="category">
-  <p><a routerLink="/category" style="text-align:center">Category</a></p>
-
+  <p><a routerLink="/category" style="text-align: center;">Category</a></p>
 </div>
 <div class="hero">
-
   <div *ngFor="let video of videoPlaylist">
     <div class="viewcontainer">
-
       <img
         class="thumbnail"
         src="{{ video.thumbnail }}"
         (click)="gotoSingleVideo(video)"
       />
       <div class="undervideo">
-        <h1 >{{ video.title }}</h1>
-        <div class="buttons">
+        <h1>{{ video.title }}</h1>
+        <!-- <div class="buttons">
           <div class="button">
             <p>{{ video.Liked }}</p>
             <img class="icon" src="./assets/icons/like.svg" alt="Likes" />
@@ -26,7 +23,7 @@
           </div>
           <h1>{{video.Tag}}</h1>
           
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
