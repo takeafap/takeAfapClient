@@ -2,28 +2,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
-// used to create fake backend
-import { fakeBackendProvider } from './common/_helpers/fake-backend';
-
 import { AppRoutingModule } from './app-routing.module';
-import { JwtInterceptor, ErrorInterceptor } from './common/_helpers/';
+import { JwtInterceptor} from '../app/common/helpers/_helpers/jwt.interceptor';
 import { AppComponent } from './app.component';
-import { AlertComponent } from './common/_components/alert.component';
+import { AlertComponent } from '../app/common/helpers/_components/alert.component';
 import { HomeComponent } from './pages/home';
-import { ProfileComponent } from './pages/profile/profile.component';
+import { ProfileComponent } from '../app/pages/home/profile/profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { environment } from '../environments/environment';
-import { VideoComponent } from './pages/home/video/video.component';
-import { NavComponent } from './sub-components/nav/nav.component';
-import { ScrollUpComponent } from './sub-components/scroll-up/scroll-up.component';
-import { VideoviewComponent } from './pages/home/videoview/videoview.component';
+import { VideoComponent } from '../app/pages/video/video.component';
+import { NavComponent } from '../app/pages/subComponents/nav/nav.component';
+import { ScrollUpComponent } from '../app/pages/subComponents/scroll-up/scroll-up.component';
+import { VideoviewComponent } from '../app/pages/video/videoview/videoview.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { LoaderComponent } from './sub-components/loader/loader.component';
-import { CategoryComponent } from './pages/home/category/category.component';
-import { FooterComponent } from './sub-components/footer/footer.component';
+import { LoaderComponent } from '../app/pages/subComponents/loader/loader.component';
+import { CategoryComponent } from '../app/pages/dashboard/category/category.component';
+import { FooterComponent } from '../app/pages/subComponents/footer/footer.component';
+import { ErrorInterceptor } from './common/helpers/_helpers';
 
 @NgModule({
   imports: [
@@ -32,8 +29,8 @@ import { FooterComponent } from './sub-components/footer/footer.component';
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule,                               // <========== Add this line!
-    ReactiveFormsModule,     
+    FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {

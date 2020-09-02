@@ -1,8 +1,8 @@
 ﻿import { Component } from '@angular/core';
 
-import { User } from '../../common/_models';
-import { AccountService } from '../../common/_services';
-import { VideoInfoService } from '@app/common/_services/video-info.service';
+import { User } from '../../common/modelsAndServices/_models/user';
+import { AccountService } from '../../common/modelsAndServices/_services/accountService/account.service';
+import { VideoInfoService } from '../../common/modelsAndServices/_services/videoService/video-info.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -47,6 +47,6 @@ export class HomeComponent {
     this._videoService.getVideoData().subscribe((resultFromApi: any[]) => {
       this.videoPlaylist = resultFromApi;
     })
-    
+
   }
 }

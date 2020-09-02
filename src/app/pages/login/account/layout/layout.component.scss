@@ -1,0 +1,12 @@
+@import "../../../../../var";
+.hero {
+  background-color: $login-background;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
