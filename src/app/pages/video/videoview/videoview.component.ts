@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class VideoviewComponent implements OnInit {
   videoObj: any;
   videoPlaylist;
-
+  currentTime: number;
   constructor(private _videoService: VideoInfoService) {
     this.videoObj = JSON.parse(sessionStorage.getItem('video'));
     this.videoPlaylist = JSON.parse(sessionStorage.getItem('videoPlaylist'));
@@ -22,10 +22,16 @@ export class VideoviewComponent implements OnInit {
       this.videoPlaylist = resultFromApi;
     });
   }
-  like() {
-    console.log('LIKE');
+  getUserWatchTime(data){
+    this.currentTime = data.target.currentTime;
+
+    console.log(this.currentTime);
   }
-  dislike() {
-    console.log('DISLIKE');
-  }
+
+  // like() {
+  //   console.log('LIKE');
+  // }
+  // dislike() {
+  //   console.log('DISLIKE');
+  // }
 }

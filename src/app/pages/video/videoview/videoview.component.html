@@ -1,6 +1,6 @@
 <div class="hero">
   <div class="viewcontainer">
-    <video controls src="{{ videoObj.src }}"></video>
+    <video controls src="{{ videoObj.src }}" (timeupdate)="getUserWatchTime($event)"></video>
     <div class="undervideo">
       <h1>{{ videoObj.title }}</h1>
       <!-- <div class="buttons">

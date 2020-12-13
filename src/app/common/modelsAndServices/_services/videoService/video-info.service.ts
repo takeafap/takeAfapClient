@@ -18,9 +18,9 @@ export class VideoInfoService {
   }
 
   getVideoData(){
-    return this.http.get(this.serviceUrl)
+    return this.http.get(this.serviceUrl);
   }
   updateEmployee(id: number) {
-    return this.http.put(`https://nodejsvideocrud.herokuapp.com/tasks`,id);
+    return this.http.put(`https://nodejsvideocrud.herokuapp.com/tasks`, id);
   }
 }
